@@ -38,8 +38,8 @@ class Validator
     {
         return [
             'required' => fn($value) => empty($value),
-            'min3' => fn($value) => ($value) && mb_strlen($value) < 3,
-            'max255' => fn($value) => ($value) && mb_strlen($value) > 255
+            'min3' => fn($value) => mb_strlen($value) < 3,
+            'max255' => fn($value) => mb_strlen($value) > 255
         ];
     }
 
